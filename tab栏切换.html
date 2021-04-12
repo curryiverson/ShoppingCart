@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab_list {
+            background-color: gray;
+        }
+        
+        .tab_con {
+            width: 200px;
+            margin-left: 38px
+        }
+        
+        .tab_list li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+        
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul style="list-style: none;">
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（999+）</li>
+                <li>社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item">商品介绍内容</div>
+            <div class="item">规格与包装内容</div>
+            <div class="item">售后保障内容</div>
+            <div class="item">商品评价内容</div>
+            <div class="item">社区内容</div>
+        </div>
+    </div>
+    <script>
+        // 获取元素
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+        // for循环绑定点击事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick = function() {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+            }
+        }
+    </script>
+</body>
+
+</html>
